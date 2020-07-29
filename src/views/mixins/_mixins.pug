@@ -1,0 +1,43 @@
+//- src/views/mixins
+
+//- nav menu mixin
+mixin menu(className, items, activeItem)
+	nav(class=className)
+		ul(class=className + "__list")
+				each menuItem, ndx in items
+					li(class=className +"__item " + ((ndx == activeItem) ? className +"__item_active" : '' ))
+						a(href= `${menuItem.url}`, class=className +"__link")
+							|#{menuItem.title}
+mixin menu-icon(className, items, activeItem, icon)
+	nav(class=className)
+		ul(class=className + "__list")
+				each menuItem, ndx in items
+					li(class=className +"__item " + ((ndx == activeItem) ? className +"__item_active" : '' ))
+						a(href= `${menuItem.url}`, class=className +"__link")
+							+icon(`${menuItem.icon}`)
+							|#{menuItem.title}
+
+//- icon SVG mixin
+mixin icon(name, mod)
+		- mod = mod || ''
+		svg(class="icon icon-" + name + ' ' + mod)
+				use(xlink:href="assets/images/sprite.svg#" + name)
+
+mixin footerNavLink(title)
+		li.footer-nav__item
+				a(href="#").footer-nav__link= title
+
+
+
+mixin tabsLink(dataShow, text)
+		li.tabs-list__item(show-tab= dataShow)&attributes(attributes)
+				span.tabs-list__text= text
+
+
+mixin img(image, className)
+	img(src="assets/img/" + image,class= className  alt="")
+
+
+
+
+

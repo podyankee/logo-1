@@ -1,0 +1,57 @@
+header.header
+	.header__top.top-header
+		.top-header__content.container
+			.top-header__column
+				.top-header__menu.menu
+					.menu__icon.icon-menu
+						span
+						span
+						span
+					nav.menu__body
+						ul.menu__list
+							li
+								a(href="#").menu__link Бренды
+							li
+								a(href="#").menu__link Распродажа
+							li
+								a(href="#").menu__link Доставка и Сборка
+							li
+								a(href="#").menu__link Гарантия
+							li
+								a(href="#").menu__link Оплата
+							li
+								a(href="#").menu__link Контакты
+			.top-header__column.top-header__column_logo
+				a(href="#").top-header__logo
+					img(src="assets/images/logo.svg", alt="")
+			.top-header__column
+				.top-header__contacts.contacts-header
+					.contacts-header__column
+						.contacts-header__item.contacts-header__item_icon
+							.contacts-header__label Лондон
+							a(href="tel:8800550770").contacts-header__phone 8-800-550-770
+					.contacts-header__column.contacts-header__column--last
+						.contacts-header__item.contacts-header__item--second
+							.contacts-header__label Бесплатно по Британии
+							a(href="tel:8800550770").contacts-header__phone 8-800-550-770
+	.header__bottom.bottom-header
+		.bottom-header.container
+			.bottom-header__column
+				ul.bottom-header__actions.actions-header(data-da="menu__body,0,640")
+					li
+						a(href="#").actions-header__item.actions-header__login #[span Вход]
+					li
+						a(href="#").actions-header__item.actions-header__reg #[span Регистрация]
+					li
+						a(href="mailto:sport@gmail.com").actions-header__item.actions-header__email #[span sport@gmail.com]
+			.bottom-header__column
+				.bottom-header__info.info-header
+					.info-header__column
+						a(href="#").info-header__callback(data-da="menu__body,3,640") #[span Обратный звонок]
+					.info-header__column
+						a(href="#").info-header__schedule
+							p #[span Пн-Пт:] 09:00-21:00
+							p #[span Сб-Вс:] 10:00-20:00
+					.info-header__column
+						a(href="#" data-da="contacts-header__column--last,3,640").info-header__cart
+							span 12

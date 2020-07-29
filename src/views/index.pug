@@ -1,0 +1,16 @@
+extends ./templates/_template.pug
+
+block title
+	title Logo
+
+block basicSeo
+	meta(name='description' content='Home Page')
+	meta(name='keywords', content='main page, home page')
+	meta(name='Kostyantin' content='Mebel-group')
+
+
+block content
+	include components/header
+	include components/main
+
+	//- include components/footer
