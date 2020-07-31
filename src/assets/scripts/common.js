@@ -149,6 +149,9 @@ const menuParents = document.querySelectorAll('.menu-page__parent');
 const menuPageBurger = document.querySelector('.menu-page__burger');
 const menuPageBody = document.querySelector('.menu-page__body');
 
+const searchSelect = document.querySelector('.search-page__title');
+const categoriesSearch = document.querySelector('.categories-search');
+
 for (let index = 0; index < menuParents.length; index++) {
 	const menuParent = menuParents[index];
 	menuParent.addEventListener('mouseenter', (e) => {
@@ -165,13 +168,28 @@ menuPageBurger.addEventListener('click', (e) => {
 	menuPageBody.classList.toggle('active');
 });
 
-// menuPageBurger.addEventListener('click', (e) => {
-// 	menuPageBurger.classList.toggle('active');
-// 	menuPageBody.classList.toggle('active');
-// });
+searchSelect.addEventListener('click', (e) => {
+	searchSelect.classList.toggle('active');
+	categoriesSearch.classList.toggle('active');
+});
 
-// menuPageBurger.addEventListener('click', (e) => {
-// 	menuPageBurger.classList.toggle('active');
-// 	menuPageBody.classList.toggle('active');
-// });
+const checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
 
+for (let index = 0; index < checkboxCategories.length; index++) {
+	const checkboxCategory = checkboxCategories[index];
+	console.log(checkboxCategory[index]);
+
+	checkboxCategory.addEventListener('change', () => {
+		checkboxCategory.classList.toggle('active');
+
+		const checkboxActiveCategories = document.querySelectorAll('.categories-search__checkbox.active');
+		if (checkboxActiveCategories.length > 0) {
+			searchSelect.classList.add('categories');
+			const searchQuantity = searchSelect.querySelector('.search-page__quantity');
+			searchQuantity.innerHTML = searchQuantity.getAttribute('data-text') + ' ' + checkboxActiveCategories.length;
+		} else {
+			searchSelect.classList.remove('categories');
+		}
+	});
+
+}

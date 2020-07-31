@@ -58,4 +58,35 @@ img, .img
 	max-width: $maxWidthContainer
 	margin: 0 auto
 	padding: 0 20px
+.btn
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	transition: $trs
+	padding: 0 25px
+	height: 39px
+	background: $accent-color
+	cursor: pointer
+	color: $white-color
+	text-transform: uppercase
+	border: none
+	font-family: $mainFont
+	font-size: 12px
+	font-weight: 900
+	@media ( min-width: 992px )
+		&:hover
+			background-color: #b86029
+.input
+	border-radius: 0 !important
+	width: 100%
+	display: block
+	padding: 0 20px
 
+.checkbox
+	position: relative
+	&__input
+		position: absolute
+		width: 0
+		height: 0
+		opacity: 0
+		visibility: hidden

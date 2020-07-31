@@ -189,4 +189,79 @@
 		font-weight: 900
 		span
 			font-size: 18px
-
+.search-page
+	display: flex
+	position: relative
+	&__select
+		cursor: pointer
+		display: flex
+		align-items: center
+		background-color: #f3f3f3
+		padding: 0 14px
+		&::before
+			content: ''
+			+dem(17px)
+			background: url('../images/icons/search-page.png')
+		&::after
+			content: ''
+			+dem(10px)
+			background: url('../images/icons/search-page-arrows.png')
+			transition: $trs
+		&.active
+			&::after
+				transform: rotate(-180deg)
+	&__title
+		display: flex
+		align-items: center
+		> span
+			margin: 0 13px
+			color: #666666
+			font-weight: 300
+			border-bottom: 1px dashed #666666
+			&:last-child
+				display: none
+		&.categories
+			span
+				display: none
+				&:last-child
+					display: block
+	&__categories
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+	&__input
+		flex: 1 1 auto
+		border-top: 2px solid #f2f2f2
+		border-bottom: 2px solid #f2f2f2
+		height: 39px
+		.input
+			height: 100%
+			border: none
+.categories-search
+	background-color: $white-color
+	border-bottom: 4px solid $accent-color
+	display: none
+	&__row
+		display: flex
+	&__column
+		border-right: 1px solid #f3f3f3
+		flex: 0 1 33.333%
+		padding: 27px 40px
+		&:last-child
+			border: none
+	&__list
+		li
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+	&__checkbox
+		.checkbox__input
+			&:checked + .checkbox__text
+				color: $accent-color
+		.checkbox__text
+			color: #999
+			&::before
+				display: none
+	&.active
+		display: block
