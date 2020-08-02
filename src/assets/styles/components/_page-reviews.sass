@@ -1,0 +1,51 @@
+.reviews-side
+	&__title
+		margin: 0 0 20 / 30 * 1em 0
+	&__item
+		margin-bottom: 40px
+		&:last-child
+			margin-bottom: 0
+		@media ( min-width:	992px)
+			&:hover
+				.reviews-side__user, .reviews-side__date
+					color: #1ab9ce
+				.reviews-side__body
+					background-color: #1ab9ce
+					color: $white-color
+					&::before
+						color: #64deee
+	&__header
+		display: flex
+		justify-content: space-between
+		margin-bottom: 10px
+	&__user
+		color: #333333
+		font-size: 12px
+		font-weight: 900
+		line-height: 18px
+		text-transform: uppercase
+		transition: $trs
+	&__date
+		color: #999999
+		font-size: 12px
+		line-height: 18px
+		font-weight: 300
+		text-transform: uppercase
+	&__body
+		padding: 14px 8px 14px 30px
+		position: relative
+		color: #666666
+		font-size: 12px
+		line-height: 18px
+		font-weight: 300
+		transition: $trs
+		&::before
+			color: #dadada
+			font-size: 50px
+			font-weight: 900
+			content: '\201d'
+			position: absolute
+			left: 8px
+			top: 12px
+			line-height: 1
+			transition: $trs

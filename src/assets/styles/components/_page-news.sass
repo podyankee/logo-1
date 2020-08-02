@@ -1,0 +1,52 @@
+.page__news-side
+	margin-bottom: 75px
+	&:last-child
+		margin-bottom: 0
+.side-title
+	color: #dadada
+	font-family: 'uni-sans'
+	font-weight: 700
+	font-size: 30px
+	text-transform: uppercase
+	letter-spacing: 0.75px
+	transition: $trs
+	@media ( min-width: 992px )
+		&:hover
+			color: #1ab9ce
+.news-side
+	&__title
+		display: inline-block
+		margin-bottom: 25px /30px * 1em
+	&__label
+		color: #333333
+		font-size: 12px
+		font-weight: 900
+		line-height: 18px
+		text-transform: uppercase
+		margin-bottom: 20 / 12 * 1em
+		@media ( min-width: 992px )
+			&:hover
+				color: $accent-color
+	&__item
+		margin-bottom: 45px
+		&:last-child
+			margin-bottom: 0
+	&__body
+		display: flex
+	&__date
+		flex: 0 0 30px
+		text-align: center
+		color: #d8d8d8
+		font-size: 18px
+		font-weight: 300
+		span
+			font-weight: 900
+			font-size: 24px
+			display: block
+	&__text
+		padding-left: 15px
+		color: #666666
+		font-size: 12px
+		font-weight: 300
+		line-height: 18px
+
