@@ -174,23 +174,24 @@ var isMobile = {
   }
 };
 
-// if (isMobile.any()) {
-//   const menuParents = document.querySelectorAll('.menu-page__parent a');
-//   for (let index = 0; index < menuParents.length; index++) {
-//     const menuParent = menuParents[index];
-//     menuParent.addEventListener('click', (e) => {
-//       e.preventDefault();
-//       menuParent.classList.toggle('active');
-//     });
-//   }
-// } else {
-  const menuParents = document.querySelectorAll('.menu-page__parent');
-  const menuPageBurger = document.querySelector('.menu-page__burger');
-  const menuPageBody = document.querySelector('.menu-page__body');
+const menuPageBurger = document.querySelector('.menu-page__burger');
+const menuPageBody = document.querySelector('.menu-page__body');
 
-  const searchSelect = document.querySelector('.search-page__title');
-  const categoriesSearch = document.querySelector('.categories-search');
+const searchSelect = document.querySelector('.search-page__title');
+const categoriesSearch = document.querySelector('.categories-search');
 
+
+if (isMobile.any()) {
+  const menuParents = document.querySelectorAll('.menu-page__parent>a');
+  for (let index = 0; index < menuParents.length; index++) {
+    const menuParent = menuParents[index];
+    menuParent.addEventListener('click', (e) => {
+      e.preventDefault();
+      menuParent.parentElement.classList.toggle('active');
+    });
+  }
+} else {
+const menuParents = document.querySelectorAll('.menu-page__parent');
   for (let index = 0; index < menuParents.length; index++) {
     const menuParent = menuParents[index];
     menuParent.addEventListener('mouseenter', (e) => {
@@ -199,8 +200,8 @@ var isMobile = {
     menuParent.addEventListener('mouseleave', (e) => {
       menuParent.classList.remove('active');
     });
-
-  }
+	}
+}
   menuPageBurger.addEventListener('click', (e) => {
     menuPageBurger.classList.toggle('active');
     menuPageBody.classList.toggle('active');
@@ -210,7 +211,6 @@ var isMobile = {
     searchSelect.classList.toggle('active');
     categoriesSearch.classList.toggle('active');
   });
-// }
 
 
 const checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
