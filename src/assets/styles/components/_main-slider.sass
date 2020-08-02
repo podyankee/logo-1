@@ -1,0 +1,109 @@
+.mainslider
+	&__slide
+		position: relative
+	&__content
+		position: relative
+		z-index: 2
+	&__image
+		position: absolute
+		+dem(100%)
+		top: 0
+		left: 0
+	&__dots
+		position: relative
+		bottom: 0 !important
+		z-index: 2
+		display: flex
+		justify-content: center
+		margin-top: -27.5px
+		counter-reset: item
+		.swiper-pagination-bullet
+			transition: $trs
+			margin: 0 23px
+			+dem(55px)
+			border-radius: 50%
+			border: 2px solid $white-color
+			position: relative
+			overflow: hidden
+			background-size: cover
+			background-repeat: no-repeat
+			background-position: center
+			opacity: 1 !important
+			&::after
+				opacity: 0 !important
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				display: flex
+				justify-content: center
+				align-items: center
+				background-color: $accent-color
+				color: $white-color
+				font-size: 16px
+				font-weight: 900
+				counter-increment: item
+				content: counter(item)
+		.swiper-pagination-bullet-active
+			&::after
+				content: ''
+				opacity: 1!important
+				counter-increment: item
+				content: counter(item)
+.content-mainslider
+	padding: 20px 35px 65px
+	&__title
+		color: #333333
+		font-size: 48px
+		font-weight: 900
+		text-transform: uppercase
+		line-height: 43px
+		margin-bottom: 50px
+		span
+			display: block
+			color: $accent-color
+	&__footer
+		padding-top: 15px
+		text-align: center
+	&__price
+		color: $white-color
+		font-size: 36px
+		font-weight: 900
+		line-height: 24px
+		margin-bottom: 24px
+		span
+			font-size: 30px
+	&__button
+		height: 33px
+		border: 3px solid $white-color
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		border-radius: 15px
+		padding: 0 20px
+		span
+			font-weight: 900
+			color: $white-color
+			text-transform: uppercase
+			padding-right: 30px
+			background: url('../images/icons/button-arrow.png') right no-repeat
+.mainslider__image
+	overflow: hidden
+.text-mainslider
+	color: #333333
+	font-size: 14px
+	font-weight: 900
+	text-transform: uppercase
+	line-height: 18px
+	&__text-1
+		color: $accent-color
+		font-size: 24px
+	&__text-2
+		color: $white-color
+		background-color: #92918e
+		display: inline-block
+		padding: 5px 10px
+		line-height: 1
+	&__text-3
+		color: #979797
