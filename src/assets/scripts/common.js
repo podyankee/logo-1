@@ -153,7 +153,7 @@ $(function() {
 
 });
 
-var isMobile = {
+let isMobile = {
   Android: function() {
     return navigator.userAgent.match(/Android/i);
   },
@@ -290,4 +290,20 @@ if (document.querySelector('.mainslider')) {
     mainSliderDots[index].style.backgroundImage = "url('" + mainSliderImage + "')";
   }
 
+}
+
+if (document.querySelector('.products-slider')) {
+  let productsSlider = new Swiper('.products-slider__item', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    autoHeight: true,
+    speed: 800,
+		navigation: {
+			nextEl: '.products-slider__arrow_next',
+			prevEl: '.products-slider__arrow_prev',
+		}
+    // loop: true
+	});
 }
