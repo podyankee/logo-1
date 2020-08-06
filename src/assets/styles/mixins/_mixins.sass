@@ -158,3 +158,9 @@
 	box-sizing: border-box
 	margin: 0 auto
 
+@mixin graystyle($i)
+	transition: all 0.3s ease
+	filter: grayscale($i)
+
+=graystyleoff
+	filter: grayscale(0)

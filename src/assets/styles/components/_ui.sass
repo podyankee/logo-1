@@ -1,0 +1,17 @@
+.arrow
+	background: url('../images/icons/sr-arrow.svg') 0 0 no-repeat
+	width: 33px
+	height: 30px
+	cursor: pointer
+	@media ( min-width: 992px )
+		&:hover
+			background: url('../images/icons/sl-arrow.svg') 0 0 no-repeat
+.arrow__prev
+	transform: rotate(-180deg)
+	@media ( min-width: 992px )
+		&:hover
+			transform: rotate(0)
+.arrow__next
+	@media ( min-width: 992px)
+		&:hover
+			transform: rotate(-180deg)
