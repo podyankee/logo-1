@@ -1,7 +1,9 @@
 .products-slider
+	margin-bottom: 20px
 	&__header
-		display: flex
 		margin-bottom: 30px
+		@media ( min-width: 768px )
+			display: flex
 	&__title
 		flex: 1 1 auto
 		color: #dadada
@@ -10,6 +12,37 @@
 		font-weight: 700
 		text-transform: uppercase
 		letter-spacing: 0.75px
+		@media ( min-width: 768px )
+			margin-bottom: 15px
+	&__control
+		display: flex
+		align-items: center
+	&__arrow
+		background: url('../images/icons/sr-arrow.svg') 0 0 no-repeat
+		width: 33px
+		height: 30px
+		cursor: pointer
+		@media ( min-width: 992px )
+			&:hover
+				background: url('../images/icons/sl-arrow.svg') 0 0 no-repeat
+		&_prev
+			transform: rotate(-180deg)
+			@media ( min-width: 992px )
+				&:hover
+					transform: rotate(0)
+		&_next
+			@media ( min-width: 992px)
+				&:hover
+					transform: rotate(-180deg)
+
+	&__info
+		padding: 0 20px
+		width: auto
+		color: #999999
+		.swiper-pagination-current
+			color: #333333
+			font-size: 30px
+			font-weight: 900
 
 // Items products grid
 
@@ -21,6 +54,12 @@
 		flex: 0 1 33.333%
 		padding: 0 15px
 		margin-bottom: 30px
+		@media ( max-width: 1200px ) and (min-width: 992px)
+			flex: 0 1 50%
+		@media ( max-width: 840px )
+			flex: 0 1 50%
+		@media ( max-width: 600px )
+			flex: 0 1 100%
 .item-product
 	padding: 15px
 	position: relative
@@ -33,7 +72,7 @@
 		top: 0
 		left: 0
 		transition: $trs
-		transform: translate(-100%, 0 )
+		transform: translate(-110%, 0 )
 	@media ( min-width: 992px )
 		&:hover
 			.item-product__hover

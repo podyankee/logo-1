@@ -299,7 +299,11 @@ if (document.querySelector('.products-slider')) {
     slidesPerView: 1,
     spaceBetween: 0,
     autoHeight: true,
-    speed: 800,
+		speed: 800,
+		pagination: {
+			el: '.products-slider__info',
+			type: 'fraction'
+		},
 		navigation: {
 			nextEl: '.products-slider__arrow_next',
 			prevEl: '.products-slider__arrow_prev',

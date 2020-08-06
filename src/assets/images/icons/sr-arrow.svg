@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 29" width="34" height="29">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff;stroke: #009cb0;paint-order:stroke fill markers;stroke-width: 6 } 
+	</style>
+	<g id="Популярные товары">
+		<g id="стрелки">
+			<g id="Стрелки">
+				<path id="правая при наведении" class="shp0" d="M3.01 19.8L15.43 19.8L15.43 25.49L30 14.5L15.43 3.51L15.43 9.2L3.01 9.2L3.01 19.8Z" />
+			</g>
+		</g>
+	</g>
+</svg>
