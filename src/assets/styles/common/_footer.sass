@@ -1,0 +1,106 @@
+.footer
+	&__body
+		@media ( min-width: 992px )
+			display: flex
+			margin: 0 -15px
+	&__column
+		@media ( min-width: 992px )
+			padding: 0 15px
+			flex: 0 1 50%
+		&:first-child
+			display: flex
+			flex-direction: column
+	&__widgets
+		display: flex
+	&__bottom
+		align-items: center
+		padding: 10px 0
+		border-top: 1px solid #dadada
+		text-align: center
+		@media ( min-width: 560px )
+			display: flex
+			text-align: left
+	&__copy
+		flex: 1 1 auto
+		color: #999
+		font-weight: 300
+		@media ( max-width: 560px )
+			margin-bottom: 10px
+	&__payments
+		img
+			max-width: 100%
+		@media ( max-width: 560px )
+			text-align: center
+			margin-bottom: 25px
+.block-footer
+	padding-bottom: 20px
+	text-align: center
+	@media ( min-width: 560px )
+		text-align: left
+		display: flex
+		flex: 1 1 auto
+	&__column
+		&:first-child
+			flex: 0 0 165px
+		&:last-child
+			flex: 1 1 auto
+			@media ( min-width: 560px )
+				padding-left: 45px
+.delivery-footer
+	@media ( max-width: 560px )
+		text-align: center
+	&__title
+		color: #999
+		font-size: 14px
+		font-weight: 900
+		text-transform: uppercase
+		letter-spacing: 0.35px
+		margin-bottom: 10px
+	&__items
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -15px
+		align-items: center
+		@media ( max-width: 560px )
+			justify-content: center
+	&__item
+		padding: 15px
+.logo-footer
+	display: inline-block
+	margin-bottom: 30px
+.block-footer
+	&__phones
+		padding-left: 15px
+		@media ( min-width: 560px )
+			background: url('../images/icons/footer-phone.png') left no-repeat
+			padding-left: 35px
+		@media ( max-width: 560px )
+			font-size: 18px
+			margin-bottom: 30px
+		p
+			&:not(:last-child)
+				margin-bottom: 14px
+	&__phone
+		color: #333
+		font-weight: 900
+.widgets-footer
+	display: flex
+	margin: 0 -15px
+	@media ( min-width: 992px )
+		justify-content: flex-end
+	@media ( max-width: 560px )
+		display: block
+		text-align: center
+	&__column
+		padding: 0 15px
+		img
+			max-width: 100%
+.social-footer
+	display: flex
+	align-items: center
+	@media ( max-width: 560px )
+		justify-content: center
+	&__item
+		margin-left: 10px
+		@media ( max-width: 560px )
+			margin-left: 5px
