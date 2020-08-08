@@ -78,8 +78,18 @@ module.exports = (env) => {
                 //colormin: false,
               },
             }, // translates CSS into CommonJS
-            "postcss-loader",
-            "sass-loader", // compiles Sass to CSS
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            }, // compiles Sass to CSS
           ],
         },
         {
