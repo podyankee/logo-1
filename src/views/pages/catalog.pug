@@ -1,0 +1,17 @@
+extends ../templates/_template.pug
+
+block title
+	title Catalog
+
+block basicSeo
+	meta(name='description' content='Catalog')
+	meta(name='keywords', content='catalog page, catalog')
+	meta(name='Kostyantin' content='Logo')
+
+
+block content
+	include ../components/header
+	include ../components/catalog/catalog-main
+	include ../components/footer
+
+	//- include components/footer

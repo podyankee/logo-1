@@ -15,3 +15,151 @@
 	@media ( min-width: 992px)
 		&:hover
 			transform: rotate(-180deg)
+
+// Price filter
+
+.filter
+	border: 4px solid #72c9d4
+	&__title
+		padding: 25px 15px 5px 15px
+		color: #36949f
+		font-size: 24px
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 0
+.section-filter
+	padding: 20px 15px
+	border-bottom: 1px solid #72c9d4
+	&__title
+		color: #36949f
+		font-weight: 700
+		line-height: 22px
+		margin-bottom: 15px
+		min-height: 30px
+		display: flex
+		align-items: center
+.price-filter
+	&__slider
+		height: 4px
+		background-color: #eaeaea
+		margin: 0 11px 50px
+		position: relative
+		&::before,  &::after
+			content: ''
+			background-color: #eaeaea
+			width: 11px
+			height: 4px
+			position: absolute
+			top: 0
+		&::before
+			left: -11px
+		&::after
+			right: -11px
+		.noUi-base, noUi-connects
+			position: relative
+			height: 4px
+		.noUi-origin, .noUi-connect
+			will-change: transform
+			position: absolute
+			width: 10%
+			height: 10%
+			z-index: 1
+			top: 0
+			right: 0
+			transform-origin: 0 0
+			transform-style: flat
+		.noUi-connect
+			background-color: $accent-color
+			width: 100%
+			height: 100%
+		.noUi-handle
+			+dem(23px)
+			position: relative
+			top: -10px
+			right: -11px
+			border: 1px solid $accent-color
+			background-color: $white-color
+			border-radius: 50%
+			outline: none
+			cursor: pointer
+			&::after
+				content: ''
+				+dem(15px)
+				position: absolute
+				left: 3px
+				top: 3px
+				border-radius: 50%
+				background-color: $accent-color
+		.noUi-tooltip
+			position: absolute
+			bottom: -22px
+			left: 50%
+			color: #999
+			transform: translate(-50%, 0)
+			font-weight: 300
+.values-price-filter
+	display: flex
+	margin: 0 -15px
+	&__column
+		padding: 0 15px
+		flex: 0 1 50%
+		display: flex
+		align-items: center
+	&__label
+		color: #999
+		font-weight: 300
+	&__input
+		flex: 1 1 auto
+		padding-left: 10px
+		.input
+			font-size: 12px
+			padding: 0 10px
+			height: 20px
+.compare-filter
+	&__items
+		padding-right: 13px
+		margin-bottom: 20px
+	&__item
+		display: flex
+		justify-content: space-between
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+	&__link
+		line-height: 16px
+		color: $link-color
+		font-weight: 300
+		text-decoration: underline
+	&__remove
+		margin-top: 3px
+		flex: 0 0 10px
+		+dem(10px)
+		background: url(/assets/images/icons/remove.png) 0 0 no-repeat
+		@media ( min-width: 992px )
+			&:hover
+				background: url(/assets/images/icons/remove-hr.png) 0 0 no-repeat
+	&__footer
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__button
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 33px
+		background-color: $link-color
+		padding: 0 13px
+		border-radius: 25px
+		span
+			background: url('/assets/images/icons/compare.png') left no-repeat
+			display: inline-block
+			padding-left: 30px
+			text-transform: uppercase
+			font-weight: 900
+			color: $white-color
+			line-height: 33px
+	&__clean
+		border-radius: 50%
+		+dem(40px)
+		background: url('/assets/images/icons/trash.png') 0 0 no-repeat
+

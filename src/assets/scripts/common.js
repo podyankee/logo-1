@@ -234,6 +234,8 @@ for (let index = 0; index < checkboxCategories.length; index++) {
 }
 
 import Swiper from 'swiper/swiper-bundle';
+import noUiSlider from 'nouislider';
+import wNumb from 'wnumb';
 
 // Swiper slider
 
@@ -343,3 +345,36 @@ if (document.querySelector('.brands-slider')) {
     // loop: true
 	});
 }
+
+// Price filter
+
+const priceSlider = document.querySelector('.price-filter__slider');
+
+noUiSlider.create(priceSlider, {
+  start: [0, 200000],
+	connect: true,
+	tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})],
+  range: {
+    'min': 0,
+    'max': 200000
+  }
+});
+
+const priceStart = document.getElementById('price-start');
+const priceEnd = document.getElementById('price-end');
+
+const setPriceValues = () => {
+	let priceStartValue;
+	let priceEndValue;
+	if (priceStart.value != '') {
+		priceStartValue = priceStart.value;
+	}
+	if (priceEnd.value != '') {
+		priceEndValue = priceEnd.value;
+	}
+	priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
+};
+
+priceStart.addEventListener('change', setPriceValues);
+priceEnd.addEventListener('change',setPriceValues );
+

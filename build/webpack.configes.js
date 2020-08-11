@@ -39,66 +39,67 @@ module.exports = (env) => {
       Loaders with configurations
     */
     module: {
-      rules: [
-        {
+      rules: [{
           test: /\.js$/,
           exclude: [/node_modules/],
-          use: [
-            {
-              loader: "babel-loader",
-              options: { presets: ["es2015"] },
+          use: [{
+            loader: "babel-loader",
+            options: {
+              presets: ["es2015"]
             },
-          ],
+          }, ],
         },
         {
-          test: /\.css$/,
+          test: /\.scss$/,
           use: [
-            env === "development" ? "style-loader": MiniCssExtractPlugin.loader,
+            'style-loader',
+            MiniCssExtractPlugin.loader,
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               options: {
-                importLoaders: 1,
-                sourceMap: true,
-                //minimize: true,
-                //colormin: false,
-              },
-            },
-          ],
-        },
-        {
-          test: /\.sass$/,
-          use: [
-            env === "development" ? "style-loader" : MiniCssExtractPlugin.loader, // creates style nodes from JS strings
-            {
-              loader: "css-loader",
-              options: {
-                importLoaders: 1,
-                //minimize: true,
-                // sourceMap: true,
-                //colormin: false,
-              },
-            }, // translates CSS into CommonJS
-            {
+                sourceMap: true
+              }
+            }, {
               loader: 'postcss-loader',
               options: {
                 sourceMap: true,
+                config: {
+                  path: `./postcss.config.js`
+                }
               }
-            },
-            {
+            }, {
               loader: 'sass-loader',
               options: {
                 sourceMap: true
               }
-            }, // compiles Sass to CSS
-          ],
-        },
-        {
-          test: /\.pug$/,
+            }
+          ]
+        }, {
+          test: /\.css$/,
           use: [
+            'style-loader',
+            MiniCssExtractPlugin.loader,
             {
-              loader: "pug-loader",
-            },
-          ],
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            }, {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                config: {
+                  path: `./postcss.config.js`
+                }
+              }
+            }
+          ]
+				},
+				{
+          test: /\.pug$/,
+          use: [{
+            loader: "pug-loader",
+          }, ],
         },
         {
           test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
@@ -152,10 +153,11 @@ module.exports = (env) => {
 
     plugins: [
       new CopyWebpackPlugin({
-				patterns: [
-			{ from: "assets/images", to: "assets/images",},
-				],
-			}),
+        patterns: [{
+          from: "assets/images",
+          to: "assets/images",
+        }, ],
+      }),
       new MiniCssExtractPlugin({
         filename: "assets/css/[name].[hash:7].bundle.css",
         chunkFilename: "[id].css",
@@ -179,7 +181,7 @@ module.exports = (env) => {
         $: "jquery",
         jQuery: "jquery",
         "window.$": "jquery",
-				"window.jQuery": "jquery",
+        "window.jQuery": "jquery",
       }),
       new WebpackNotifierPlugin({
         title: "Logo project",

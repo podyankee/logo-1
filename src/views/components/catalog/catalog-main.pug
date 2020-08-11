@@ -1,0 +1,16 @@
+main.page
+	.page__container.container
+		.aside.page__side
+			nav.page__menu.menu-page
+				.menu-page__header
+					.menu-page__title Каталог товаров
+					.menu-page__burger
+						.menu-page__lines
+							span
+							span
+							span
+				.menu-page__body
+					include ../_menu-page
+			include _filter-catalog
+		include ../_page-content
+
