@@ -76,6 +76,12 @@ img, .img
 	@media ( min-width: 992px )
 		&:hover
 			background-color: #b86029
+	&--gray
+		color: #666666
+		background-color: #e6e6e6
+		@media ( min-width: 992px )
+			&:hover
+				background-color: #a1a1a1
 .input
 	border-radius: 0 !important
 	border: 1px solid #e5e5e5
@@ -84,16 +90,43 @@ img, .img
 	display: block
 	padding: 0 15px
 
+.swiper
+	overflow: hidden
+section
+	padding: 25px 0
 .checkbox
 	position: relative
-	&__input
+	&-input
 		position: absolute
 		width: 0
 		height: 0
 		opacity: 0
 		visibility: hidden
+		&:checked + .checkbox__text::before
+			border: 2px solid #009aaf
+		&:checked + .checkbox__text::after
+			content: ''
+			position: absolute
+			left: 3px
+			top: 3px
+			+dem(9px)
+			background-color: #53b5de
+	&__text
+		display: inline-flex
+		align-items: center
+		position: relative
+		font-size: 12px
+		color: #666666
+		line-height: calc(15 / 12)
+		cursor: pointer
+		&::before
+			content: ''
+			margin-right: 14px
+			flex: 0 0 15px
+			left: 0
+			top: 0
+			width: 15px
+			height: 15px
+			background: #fff
+			border: 1px solid #dadada
 
-.swiper
-	overflow: hidden
-section
-	padding: 25px 0

@@ -191,7 +191,7 @@ if (isMobile.any()) {
     });
   }
 } else {
-const menuParents = document.querySelectorAll('.menu-page__parent');
+  const menuParents = document.querySelectorAll('.menu-page__parent');
   for (let index = 0; index < menuParents.length; index++) {
     const menuParent = menuParents[index];
     menuParent.addEventListener('mouseenter', (e) => {
@@ -200,17 +200,17 @@ const menuParents = document.querySelectorAll('.menu-page__parent');
     menuParent.addEventListener('mouseleave', (e) => {
       menuParent.classList.remove('active');
     });
-	}
+  }
 }
-  menuPageBurger.addEventListener('click', (e) => {
-    menuPageBurger.classList.toggle('active');
-    menuPageBody.classList.toggle('active');
-  });
+menuPageBurger.addEventListener('click', (e) => {
+  menuPageBurger.classList.toggle('active');
+  menuPageBody.classList.toggle('active');
+});
 
-  searchSelect.addEventListener('click', (e) => {
-    searchSelect.classList.toggle('active');
-    categoriesSearch.classList.toggle('active');
-  });
+searchSelect.addEventListener('click', (e) => {
+  searchSelect.classList.toggle('active');
+  categoriesSearch.classList.toggle('active');
+});
 
 
 const checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
@@ -301,17 +301,17 @@ if (document.querySelector('.products-slider')) {
     slidesPerView: 1,
     spaceBetween: 0,
     autoHeight: true,
-		speed: 800,
-		pagination: {
-			el: '.products-slider__info',
-			type: 'fraction'
-		},
-		navigation: {
-			nextEl: '.products-slider__arrow_next',
-			prevEl: '.products-slider__arrow_prev',
-		}
+    speed: 800,
+    pagination: {
+      el: '.products-slider__info',
+      type: 'fraction'
+    },
+    navigation: {
+      nextEl: '.products-slider__arrow_next',
+      prevEl: '.products-slider__arrow_prev',
+    }
     // loop: true
-	});
+  });
 }
 if (document.querySelector('.brands-slider')) {
   let brandsSlider = new Swiper('.brands-slider__body', {
@@ -319,31 +319,31 @@ if (document.querySelector('.brands-slider')) {
     observeParents: true,
     slidesPerView: 5,
     spaceBetween: 0,
-		speed: 800,
-		navigation: {
-			nextEl: '.brands-slider__arrow_next',
-			prevEl: '.brands-slider__arrow_prev',
-		},
-		breakpoints: {
-			320: {
-				slidesPerView: 1,
-				autoheight: true
-			},
-			480: {
-				slidesPerView: 2,
-			},
-			600: {
-				slidesPerView: 3,
-			},
-			768: {
-				slidesPerView: 4,
-			},
-			992: {
-				slidesPerView: 5,
-			},
-		}
+    speed: 800,
+    navigation: {
+      nextEl: '.brands-slider__arrow_next',
+      prevEl: '.brands-slider__arrow_prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        autoheight: true
+      },
+      480: {
+        slidesPerView: 2,
+      },
+      600: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      992: {
+        slidesPerView: 5,
+      },
+    }
     // loop: true
-	});
+  });
 }
 
 // Price filter
@@ -352,8 +352,12 @@ const priceSlider = document.querySelector('.price-filter__slider');
 
 noUiSlider.create(priceSlider, {
   start: [0, 200000],
-	connect: true,
-	tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})],
+  connect: true,
+  tooltips: [wNumb({
+    decimals: 0
+  }), wNumb({
+    decimals: 0
+  })],
   range: {
     'min': 0,
     'max': 200000
@@ -364,17 +368,37 @@ const priceStart = document.getElementById('price-start');
 const priceEnd = document.getElementById('price-end');
 
 const setPriceValues = () => {
-	let priceStartValue;
-	let priceEndValue;
-	if (priceStart.value != '') {
-		priceStartValue = priceStart.value;
-	}
-	if (priceEnd.value != '') {
-		priceEndValue = priceEnd.value;
-	}
-	priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
+  let priceStartValue;
+  let priceEndValue;
+  if (priceStart.value != '') {
+    priceStartValue = priceStart.value;
+  }
+  if (priceEnd.value != '') {
+    priceEndValue = priceEnd.value;
+  }
+  priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
 };
 
 priceStart.addEventListener('change', setPriceValues);
-priceEnd.addEventListener('change',setPriceValues );
+priceEnd.addEventListener('change', setPriceValues);
 
+
+// Filter spoiler
+
+
+const spoiler = document.querySelectorAll('.spoiler');
+spoiler.forEach(item => {
+  item.addEventListener('click', () => {
+
+    item.classList.toggle('active');
+    item.nextSibling.classList.toggle('none');
+  });
+});
+
+if (isMobile.any()) {
+	const filterTitle = document.querySelector('.filter__title');
+	filterTitle.addEventListener('click', () => {
+		filterTitle.classList.toggle('active');
+		filterTitle.nextElementSibling.classList.toggle('none');
+	})
+}
