@@ -20,6 +20,11 @@
 
 .filter
 	border: 4px solid #72c9d4
+	&__content.none
+		@media ( max-width: 992px )
+			display: none
+		@media ( min-width: 992px )
+			display: block !important
 	&__title
 		padding: 25px 15px 5px 15px
 		color: #36949f
@@ -27,17 +32,56 @@
 		font-weight: 700
 		text-transform: uppercase
 		letter-spacing: 0
+		transition: $trs
+		@media ( max-width: 992px )
+			padding: 25px 15px 25px 15px
+			&.active
+				padding: 25px 15px 5px 15px
+	&__footer
+		display: flex
+		justify-content: space-between
+		padding: 15px
+	&__btn
+		padding: 0 15px
+		text-transform: none
 .section-filter
-	padding: 20px 15px
+	padding: 15px
 	border-bottom: 1px solid #72c9d4
 	&__title
 		color: #36949f
 		font-weight: 700
 		line-height: 22px
-		margin-bottom: 15px
 		min-height: 30px
 		display: flex
 		align-items: center
+		justify-content: space-between
+		&.spoiler
+			cursor: pointer
+			&::after
+				flex: 0 0 30px
+				content: ''
+				border-radius: 50%
+				+dem(30px)
+				border-radius: 50%
+				border: 1px solid #72c9d4
+				background: url('../images/icons/li-arrow.png') center no-repeat
+			&.active
+				color: #333
+				&::after
+					border: 1px solid #999
+					background: url('../images/icons/spoiler-arrow.png') center no-repeat
+		&.spoiler + .section-filter__body.none
+			display: none
+	&__body
+		padding-top: 15px
+	&__checkbox
+		display: block
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
+	&:last-child
+		border: none
+
 .price-filter
 	&__slider
 		height: 4px
