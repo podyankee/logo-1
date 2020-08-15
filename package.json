@@ -53,6 +53,7 @@
     "nouislider": "^14.6.0",
     "scrollmagic": "^2.0.5",
     "slick-slider": "^1.8.2",
+    "styleselect": "^1.0.3",
     "swiper": "^6.1.1",
     "wnumb": "^1.2.0"
   }

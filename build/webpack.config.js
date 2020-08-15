@@ -180,10 +180,13 @@ module.exports = (env) => {
         jQuery: "jquery",
         "window.$": "jquery",
 				"window.jQuery": "jquery",
+				styleSelect: "styleselect"
       }),
       new WebpackNotifierPlugin({
         title: "Logo project",
       }),
     ],
-  };
+	};
+
+
 };
