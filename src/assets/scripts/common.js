@@ -400,5 +400,24 @@ if (isMobile.any()) {
 	filterTitle.addEventListener('click', () => {
 		filterTitle.classList.toggle('active');
 		filterTitle.nextElementSibling.classList.toggle('none');
-	})
+	});
 }
+
+// Custom select
+
+// const customSelect = document.querySelectorAll('.custom-select');
+
+// customSelect.forEach(function(item) {
+// 	console.log(item);
+// });
+
+// let styleSelect = require('styleSelect');
+
+const show = document.querySelectorAll('.show');
+styleSelect('.custom-select');
+show.forEach(item => {
+	styleSelect(item);
+});
+
+
+

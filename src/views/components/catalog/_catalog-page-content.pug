@@ -1,0 +1,79 @@
+.page__content
+	form(action="#").page__search.search-page
+		.search-page__select
+			.search-page__title
+				span Везде
+				span(data-text="Выбрано").search-page__quantity
+			.search-page__categories.categories-search
+				.categories-search__row
+					.categories-search__column
+						ul.categories-search__list
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Беговые дорожки
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Эллиптические тренажеры
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Велотренажеры
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Гребные тренажеры
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Вибромассажеры
+					.categories-search__column
+						ul.categories-search__list
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Теннисные столы
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Баскетбольные щиты и стойки
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Массажные кресла
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Массажные столы
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Силовые тренажеры
+					.categories-search__column
+						ul.categories-search__list
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Батуты
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Детские городки
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Дачная мебель
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Уличные спортивные комплексы
+							li
+								label.categories-search__checkbox.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__text Аксессуары
+		.search-page__input
+			input(type="text").input
+		button(type="submit").search-page__btn.btn Найти
+	include _catalog-breadcrumbs
+	include _catalog
